@@ -1,0 +1,140 @@
+body, html {
+    height: 100%; /*la hauteur*/
+    margin: 0; /*la marge*/
+    padding: 0; /*l'espacement*/
+}
+
+/* Styles de base pour la carte */
+#map {
+    position: absolute; /*Positionnement par rapport à son contenu*/
+    top: 0; /*Gestion du bord supérieur*/
+    left: 0; /*Gestion du bord gauche*/
+    width: 100%; /*la largeur*/
+    height: 100%; /*la hauteur*/
+    z-index: 0; /*son niveau d'affichage par rapport aux autres élements */
+}
+
+/* Styles pour le titre */
+.titre {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    text-align: center; /* Centre le texte horizontalement */
+    background-color: rgba(233, 233, 233); /*La couleur de fond*/
+    font-family: Calibri, sans-serif; /* La police d'écriture, t'es la meilleure calibri */
+    font-size: 28px; /*La taille de la police*/
+    font-weight: bold;/*En gras*/
+    color: rgb(15, 14, 14); /*Et la couleur*/
+    z-index: 1;
+}
+
+.icone-apres::before {
+    content: ""; /* On laisse vide pour que les icônes puissent s'afficher*/
+    display: inline-block; /* On affiche les icônes en ligne avec le texte */
+    width: 40px; 
+    height: 40px; 
+    background-size: contain; /* On ajuste la taille de l'icône pour qu'elle s'adapte au conteneur */
+    background-repeat: no-repeat; /* On empêche la répétition de l'icône */
+    vertical-align: middle; /* On aligne verticalement les icônes au milieu du texte */
+}
+
+.icone-apres::before {
+    background-image: url('https://previews.123rf.com/images/rastudio/rastudio1505/rastudio150501710/40273127-vtt-coureur-icône-fine-ligne-pour-le-web-et-mobile-design-plat-moderne-et-minimaliste-vecteur-gris.jpg');
+    margin-left: 2px; 
+}
+
+/* Styles pour les contrôles de la couche */
+.leaflet-control-layers {
+    pointer-events: auto; 
+    align-items: center; 
+    top: 30px;
+    right: 0px;
+}
+
+/* Styles pour les contrôles de zoom */
+.leaflet-control-zoom {
+    pointer-events: auto;
+    align-items: center;
+    top: 30px;
+    right: 2px;
+}
+
+/* Styles pour le conteneur des onglets */
+.tabs-container {
+    position: absolute;
+    top: 0px;
+    right: 0px; 
+    z-index: 1;
+    display: flex; /* Disposition flexible en fonction des élements contenu dans les onglets */
+    flex-direction: row; /* Changer la direction en ligne des élements */
+    gap: 0px; /* Espace entre les éléments de l'onglet */
+}
+
+/* Styles pour chaque onglet */
+.tab {
+    background-color: rgba(122, 126, 123, 0.95);
+    color: rgb(15, 14, 14);
+    padding: 10px;
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    height: 15px; 
+}
+
+/* Styles pour l'onglet en survol */
+.tab:hover {
+    background-color: #579757; /* Vert en survol */
+}
+
+/* Styles pour l'onglet actif */
+.tab.active {
+    background-color: #af5d42; /* Couleur de fond pour l'onglet actif */
+    color: white; /* Couleur du texte pour l'onglet actif */
+}
+
+/* Styles pour le panneau */
+.panel {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+/* Styles pour le titre du panneau */
+.panel-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+
+#profilePanel {
+    position: absolute;
+    top: 200px; /* Ajustez en fonction de l'espace sous le titre, ou en fonction de l'espace occupé par le premier panneau */
+    left: 0px; /* Décale le panneau vers la droite pour qu'il ne chevauche pas le premier panneau */
+    width: 510px;
+    background-color: rgba(233, 233, 233);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+#profileLegend h3 {
+    font-size: 16px;
+    margin-top: 0;
+    font-family: Calibri, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+#profileList {
+    margin-top: 10px;
+}
