@@ -138,14 +138,14 @@ tabref.addEventListener('click', function () {
 
 // Créez des icônes personnalisées avec une taille définie
 var startIcon = L.icon({
-    iconUrl: 'https://raw.githubusercontent.com/salem139/VTT/main/play.png',
+    iconUrl: 'https://raw.githubusercontent.com/salem139/VTT/main/jouer.png',
     iconSize: [20, 20],
     iconAnchor: [10, 20],
     popupAnchor: [0, -20]
 });
 
 var endIcon = L.icon({
-    iconUrl: 'https://raw.githubusercontent.com/salem139/VTT/main/goal.png',
+    iconUrl: 'https://raw.githubusercontent.com/salem139/VTT/main/objectif.png',
     iconSize: [20, 20],
     iconAnchor: [10, 20],
     popupAnchor: [0, -20]
