@@ -150,3 +150,32 @@ var endIcon = L.icon({
     iconAnchor: [10, 20],
     popupAnchor: [0, -20]
 });
+
+
+// L'URL de l'API GitHub pour récupérer le contenu du dossier gpx
+var gpxFolderUrl = 'https://api.github.com/repos/salem139/VTT68/main/GPX';
+
+// Effectuer une requête pour récupérer la liste des fichiers dans le dossier gpx
+fetch(gpxFolderUrl)
+    .then(response => response.json())
+    .then(data => {
+        // Parcourir les fichiers récupérés
+        data.forEach(function(file) {
+            // Vérifier si le fichier est un fichier GPX (avec l'extension .gpx)
+            if (file.name.endsWith('.gpx')) {
+                var gpxUrl = file.download_url; // URL de téléchargement du fichier GPX
+                
+                // Ajouter le fichier GPX à la carte
+                new L.GPX(gpxUrl, {
+                    async: true,
+                    marker_options: {
+                        startIcon: startIcon, // Icône de départ
+                        endIcon: endIcon      // Icône d'arrivée
+                    }
+                }).on('loaded', function(e) {
+                    mymap.fitBounds(e.target.getBounds()); // Adapter la carte au tracé GPX
+                }).addTo(mymap);
+            }
+        });
+    })
+    .catch(error => console.error('Erreur lors de la récupération des fichiers GPX:', error));
